@@ -48,7 +48,7 @@ function Header() {
           <HomeIcon className="navBtn" />
           <div className="relative navBtn">
             <PaperAirplaneIcon className="navBtn rotate-45" />
-            <div className="absolute -top-0 -right-2 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate-pulse text-white">
+            <div className="absolute -top-1 -right-2 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate-pulse text-white">
               5
               </div>
           </div>
@@ -60,7 +60,7 @@ function Header() {
           <img
             src="https://blogger.googleusercontent.com/img/a/AVvXsEhUjPOfaCgGx1qA68GsH-drbWE9Mh1ihnBB_fwWWkMZunwIG0k-vfxySaCWoquNzbns-zWZyrofYQmJarzIQ7HzxZcK477qoE6bMQnWp990GlBASXAumrCp_SVZ5IN0Btvh6HrGYmVqt9lc5tl1hGFPEWoKhzgRpZrR2MmlkEpI9ZswwRH2qM8Geu57=s320"
             alt="profile pic"
-            className="h-10 w-10 cursor-pointer rounded-full"
+            className="h-9 w-9 cursor-pointer rounded-full"
           />
         </div>
       </div>
