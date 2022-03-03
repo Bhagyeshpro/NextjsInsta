@@ -6,8 +6,8 @@ function Stories() {
   const [storyData, setStoryData] = useState([])
 
   useEffect(() => {
-    // Get an array of face use data
-    const suggestions = [...Array(20)].map((_, i) => ({
+    // Get an array of face use data and implicit return
+    const suggestions = [...Array(30)].map((_, i) => ({
       ...faker.helpers.contextualCard(),
       id: i,
     }))

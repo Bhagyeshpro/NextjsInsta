@@ -15,7 +15,7 @@ const posts = [
     userImg:
       'https://images.pexels.com/photos/2416871/pexels-photo-2416871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
     img: 'https://images.pexels.com/photos/2416871/pexels-photo-2416871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940',
-    caption: 'Smash that like button',
+    caption: 'Smash that like button Smash that like button Smash that like button Smash that like button Smash that like button',
   },
 ]
 
