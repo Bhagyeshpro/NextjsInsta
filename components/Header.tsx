@@ -8,8 +8,11 @@ import {
   MenuIcon,
 } from '@heroicons/react/outline'
 import { HomeIcon } from '@heroicons/react/solid'
+import { useSession } from "next-auth/react";
 
 function Header() {
+  const {data: session} = useSession();
+  console.log(session);
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50">
       <div className="mx-5 flex max-w-4xl justify-between lg:mx-auto">
@@ -46,6 +49,10 @@ function Header() {
         {/* Right Container */}
         <div className="flex items-center justify-end space-x-4">
           <HomeIcon className="navBtn" />
+          <MenuIcon className="h-6 cursor-pointer md:hidden" />
+
+          {session ? (
+            <>
           <div className="relative navBtn">
             <PaperAirplaneIcon className="navBtn rotate-45" />
             <div className="absolute -top-1 -right-2 text-xs w-5 h-5 bg-red-500 rounded-full flex items-center justify-center animate-pulse text-white">
@@ -55,13 +62,18 @@ function Header() {
           <UserGroupIcon className="navBtn" />
           <PlusCircleIcon className="navBtn" />
           <HeartIcon className="navBtn" />
-          <MenuIcon className="h-6 cursor-pointer md:hidden" />
 
           <img
-            src="https://blogger.googleusercontent.com/img/a/AVvXsEhUjPOfaCgGx1qA68GsH-drbWE9Mh1ihnBB_fwWWkMZunwIG0k-vfxySaCWoquNzbns-zWZyrofYQmJarzIQ7HzxZcK477qoE6bMQnWp990GlBASXAumrCp_SVZ5IN0Btvh6HrGYmVqt9lc5tl1hGFPEWoKhzgRpZrR2MmlkEpI9ZswwRH2qM8Geu57=s320"
+            src={session?.user?.image}
             alt="profile pic"
             className="h-9 w-9 cursor-pointer rounded-full"
-          />
+          />  
+            </>
+
+          ) : (
+            <button>Sign In</button>
+          )}
+          
         </div>
       </div>
     </div>

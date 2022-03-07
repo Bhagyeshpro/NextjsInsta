@@ -26,7 +26,12 @@ function Suggestions() {
                 <div key={profile.id}
                     className="flex item-center justify-between mt-3"
                 >
-                    <img src={profile.avatar} className="h-10 w-10 rounded-full border p-[2px] " />
+                    <img src={profile.avatar} className="h-10 w-10 rounded-full border p-[2px]"/>
+                    <div className="flex-1 ml-4">
+                        <h2 className="font-semibold text-sm">{profile.username}</h2>
+                        <h3 className="text-xs text-gray-400">Works At {profile.company.name}</h3>
+                    </div>
+                    <button className="text-xs text-blue-400 font-bold" >Follow</button>
                 </div>
             ))
         }
