@@ -58,7 +58,7 @@ function Header() {
           <MenuIcon className="h-6 cursor-pointer md:hidden" />
 
           <img
-            src="https://blogger.googleusercontent.com/img/a/AVvXsEhUjPOfaCgGx1qA68GsH-drbWE9Mh1ihnBB_fwWWkMZunwIG0k-vfxySaCWoquNzbns-zWZyrofYQmJarzIQ7HzxZcK477qoE6bMQnWp990GlBASXAumrCp_SVZ5IN0Btvh6HrGYmVqt9lc5tl1hGFPEWoKhzgRpZrR2MmlkEpI9ZswwRH2qM8Geu57=s320"
+            src="https://images.pexels.com/photos/2416871/pexels-photo-2416871.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
             alt="profile pic"
             className="h-10 w-10 cursor-pointer rounded-full"
           />
