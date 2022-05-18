@@ -1,6 +1,11 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
   images: {
-    domains: ["blogger.googleusercontent.com"]
-  }
+      domains: ["meditationprogrammer.blogspot.com"],
+      domains: ["blogger.googleusercontent.com"]
+      // domains: ["images.pexels.com"],
+  },
+  // images: {
+  // },
+
 }

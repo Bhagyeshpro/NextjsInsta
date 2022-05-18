@@ -8,23 +8,25 @@ import {
   MenuIcon,
 } from '@heroicons/react/outline'
 import { HomeIcon } from '@heroicons/react/solid'
-import { useSession } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/router"
 
 function Header() {
   const {data: session} = useSession();
-  console.log(session);
+  const router = useRouter();
+
   return (
     <div className="shadow-sm border-b bg-white sticky top-0 z-50">
       <div className="mx-5 flex max-w-4xl justify-between lg:mx-auto">
         {/* Header Left */}
-        <div className="relative hidden w-24 lg:inline-grid">
+        <div onClick={() => router.push("/")} className="relative hidden w-24 lg:inline-grid">
           <Image
             src="https://blogger.googleusercontent.com/img/a/AVvXsEjV_zzS438UKyOuDC3Sqtq2etM-lbLNTSW8fZFL801UqXm47-U3KSYCuk5f52Urlk6GOzSjU-E7tG9LIod8GaTnze_pL2jBbsp9xhcqLaLO-NHSiiOC3ZhEUcseXd2FrUyYJPZMf1PApFYnZXTulVRJB4P6pL8Pa1T7LQ2di9UTXdLTccFCDK5jqdmb=s320"
             layout="fill"
             objectFit="contain"
           />
         </div>
-        <div className="relative w-10 flex-shrink-0 cursor-pointer lg:hidden">
+        <div onClick={() => router.push("/")} className="relative w-10 flex-shrink-0 cursor-pointer lg:hidden">
           <Image
             src="https://blogger.googleusercontent.com/img/a/AVvXsEjS5WdCkpikRw9FwijBE61JvgC-umuW1roOhDzFDqkLq0UALUYyXwtbsTwzPbEpndj1MZz3-97Tjw0vSQ9GCGXj_sonBSvpS3SuNm69_NweM7WNQlHzQLRVOSDsXPG5sS3VkZGanvdmS8elIWX48xkyH8aqQ-5IYIPm2A08NPEY3QELXZ6rF96h-dXm=s500"
             layout="fill"
@@ -48,7 +50,7 @@ function Header() {
 
         {/* Right Container */}
         <div className="flex items-center justify-end space-x-4">
-          <HomeIcon className="navBtn" />
+          <HomeIcon onClick={() => router.push("/")} className="navBtn" />
           <MenuIcon className="h-6 cursor-pointer md:hidden" />
 
           {session ? (
@@ -64,14 +66,17 @@ function Header() {
           <HeartIcon className="navBtn" />
 
           <img
-            src={session?.user?.image}
+            onClick={signOut}
+            src={session?.user?.image || "https://miro.medium.com/max/598/0*8or0oFmHDRKnlETg"}
             alt="profile pic"
             className="h-9 w-9 cursor-pointer rounded-full"
           />  
             </>
 
           ) : (
-            <button>Sign In</button>
+            <button
+              onClick={signIn}
+            >Sign In</button>
           )}
           
         </div>
