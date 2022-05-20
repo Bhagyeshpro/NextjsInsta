@@ -153,7 +153,7 @@ function Modal() {
 
                 <div className='mt-5 sm:mt-6'>
                   <button
-                    type='button'
+                    type='submit'
                     disabled={!selectedPic}
 
                     onClick={uploadPost}
