@@ -10,7 +10,7 @@ function Suggestions() {
             id: i,
         }));
         
-        console.log(suggestions)
+        // console.log(suggestions)
         setSuggestions(suggestions)
     }, [])
 
